@@ -4,7 +4,7 @@ use warnings;
 use Carp;
 use base qw( Net::LDAP::Batch::Action );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 __PACKAGE__->mk_accessors(qw( search ));
 
@@ -77,7 +77,8 @@ sub execute {
             # no match for search.
             # in SQL, this would just be a no-op, since WHERE failed.
             # but here we assume that caller expects the object to exist.
-            croak "delete search failed to match $where";
+            croak "delete search failed to match $where:\n"
+                . $self->get_ldap_err($msg);
         }
 
     }

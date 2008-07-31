@@ -11,7 +11,7 @@ use Net::LDAP::Batch::Action::Update;
 use Net::LDAP::Batch::Action::Delete;
 use Scalar::Util qw( blessed );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 

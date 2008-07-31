@@ -4,7 +4,7 @@ use warnings;
 use Carp;
 use base qw( Class::Accessor::Fast );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 __PACKAGE__->mk_accessors(qw( ldap entry complete debug ));
 
